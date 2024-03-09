@@ -1,0 +1,143 @@
+{% extends "base.html" %} {% block title %}Registration Form{% endblock %} {%
+block content %}
+<h1>Manifest Kenya Registration Form</h1>
+<p>
+  This is an online registration form for members who are attending the Physical
+  Livestream Centre for Manifest Kenya, Nairobi.
+</p>
+<form clas="row g-3" action="/" method="post">
+  <label for="name" class="form-label">Name</label>
+  <div class="row">
+    <div class="col">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="First name"
+        aria-label="First name"
+      />
+    </div>
+    <div class="col">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Last name"
+        aria-label="Last name"
+      />
+    </div>
+  </div>
+
+  <div>
+    <label for="gender">Gender:</label><br />
+    <input type="radio" id="male" name="gender" value="Male" />
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="Female" />
+    <label for="female">Female</label><br />
+  </div>
+
+  <div class="col-md-6">
+    <label for="phone_number" class="form-label">Phone Number</label>
+    <input type="text" class="form-control" id="phone_number" />
+  </div>
+  <div class="col-md-6">
+    <label for="residence" class="form-label">Residence</label>
+    <input type="text" class="form-control" id="residence" />
+  </div>
+
+  <label>Are you serving with us?</label><br />
+  <input type="radio" id="serving_yes" name="serving" value="yes" />
+  <label for="serving_yes">Yes</label>
+  <input type="radio" id="serving_no" name="serving" value="no" />
+  <label for="serving_no">No</label><br />
+  <div id="teams" style="display: none">
+    <h3>Manifest Kenya Serving Team</h3>
+    <h5>Please select the department you are serving under.</h5>
+    <label>Department</label><br />
+    <input type="radio" id="team1" name="team" value="Team 1" />
+    <label for="team1">Administration</label><br />
+    <input type="radio" id="team2" name="team" value="Team 2" />
+    <label for="team2">Welfare</label>
+    <input type="radio" id="team3" name="team" value="Team 3" />
+    <label for="team3">Communications</label><br />
+    <input type="radio" id="team4" name="team" value="Team 4" />
+    <label for="team4">Missions and Outreach</label>
+    <input type="radio" id="team5" name="team" value="Team 5" />
+    <label for="team5">Operations</label><br />
+    <input type="radio" id="team6" name="team" value="Team 6" />
+    <label for="team6">Legal</label>
+    <input type="radio" id="team7" name="team" value="Team 6" />
+    <label for="team6">Finance</label><br />
+  </div>
+
+  <label>Are you a student?</label><br />
+  <input type="radio" id="student_yes" name="student" value="yes" />
+  <label for="student_yes">Yes</label>
+  <input type="radio" id="student_no" name="student" value="no" />
+  <label for="student_no">No</label><br />
+  <div id="institution" style="display: none">
+    <h3>Institution Information</h3>
+    <label for="institution_name">Name of Institution:</label>
+    <input
+      type="text"
+      id="institution_name"
+      name="institution_name"
+      required
+    /><br />
+    <label for="institution_location">Location of Institution:</label>
+    <input
+      type="text"
+      id="institution_location"
+      name="institution_location"
+      required
+    /><br />
+  </div>
+
+  <label>Is this your first time?</label><br />
+  <input type="radio" id="first_time_yes" name="first_time" value="yes" />
+  <label for="first_time_yes">Yes</label>
+  <input type="radio" id="first_time_no" name="first_time" value="no" />
+  <label for="first_time_no">No</label><br />
+  <h3>DATA PROTECTION NOTICE</h3>
+  <p>
+    Manifest Fellowship would like to hold and use the information you have
+    provided in this form for the purposes set out below:
+  </p>
+  <ol type="1">
+    <li>
+      To keep you informed of events, services, and other related communication
+      from the ministry.
+    </li>
+    <li>
+      To share your contact details with our teams for experience sharing with
+      the ministry.
+    </li>
+    <li>
+      To use your photograph(s) and video(s) taken during any of our events on
+      our communication materials.
+    </li>
+  </ol>
+  <label
+    >I <b>CONSENT</b> to Manifest Kenya holding and using my information and
+    contacting me for the above purposes</label
+  ><br />
+  <input type="radio" id="consent_yes" name="consent" value="yes" required />
+  <label for="consent_yes">Yes</label>
+  <input type="radio" id="consent_no" name="consent" value="no" />
+  <label for="consent_no">No</label><br />
+  <input type="submit" value="Submit" />
+</form>
+
+<script>
+  document.getElementById("serving_yes").addEventListener("click", function () {
+    document.getElementById("teams").style.display = "block";
+  });
+  document.getElementById("serving_no").addEventListener("click", function () {
+    document.getElementById("teams").style.display = "none";
+  });
+  document.getElementById("student_yes").addEventListener("click", function () {
+    document.getElementById("institution").style.display = "block";
+  });
+  document.getElementById("student_no").addEventListener("click", function () {
+    document.getElementById("institution").style.display = "none";
+  });
+</script>
+{% endblock %}
