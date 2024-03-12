@@ -1,7 +1,4 @@
-first_name,last_name,gender,phone_number,residence,serving,teams,student,first_time,consent
-,,Male,,,yes,['Team 3'],yes,no,yes
-,,Female,,,yes,['Team 1'],yes,yes,yes
-,,Male,,,yes,['Team 1'],yes,yes,yes
-,,Male,,,yes,['Team 1'],yes,yes,yes
-,,Male,,,yes,['Team 1'],yes,yes,yes
-,,Male,,,yes,['Team 2'],yes,yes,no
+First Name,Last Name,Gender,Phone Number,Residence,Serving,Team,Student,Institution Name,Institution Location,First Time,Consent
+Derrick,Ampire,male,0712461112,Seefar,yes,administration,yes,dfdf,gd,yes,True
+Brian,Mugisha,male,0712461115,sd,yes,welfare,yes,sxdf,ffd,yes,True
+df,gfdg,male,8935895erfe,sdnfm,yes,welfare,yes,er,fd,yes,True
