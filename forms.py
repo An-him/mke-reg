@@ -6,8 +6,8 @@ from wtforms.validators import DataRequired, Length
 class RegistrationForm(FlaskForm):
     first_name = StringField('First Name', validators=[DataRequired()])
     last_name = StringField('Last Name', validators=[DataRequired()])
-    gender = SelectField('Gender', choices=[
-                         ('male', 'Male'), ('female', 'Female')], validators=[DataRequired()])
+    gender = RadioField('Gender', choices=[
+        ('male', 'Male'), ('female', 'Female')], validators=[DataRequired()])
     phone_number = StringField('Phone Number', validators=[
                                DataRequired(), Length(min=10, max=12)])
     residence = StringField('Residence', validators=[DataRequired()])

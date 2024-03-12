@@ -9,6 +9,7 @@ block content %}
         Physical Livestream Centre for Manifest Kenya, Nairobi.
       </p>
       <form action="/" method="post">
+        {{ form.hidden_tag() }}
         <div class="row">
           <div class="col">
             <label for="first_name" class="form-label">First name</label>
@@ -22,9 +23,9 @@ block content %}
 
         <div>
           <label for="gender">Gender</label><br />
-          <input type="radio" id="male" name="gender" value="Male" required />
+          <input type="radio" id="male" name="gender" value="male" required />
           <label for="male">Male</label>
-          <input type="radio" id="female" name="gender" value="Female" />
+          <input type="radio" id="female" name="gender" value="female" />
           <label for="female">Female</label><br />
         </div>
 
@@ -40,7 +41,6 @@ block content %}
           id="serving_yes"
           name="serving"
           value="yes"
-          required
         />
         <label for="serving_yes">Yes</label>
         <input type="radio" id="serving_no" name="serving" value="no" />
@@ -49,19 +49,19 @@ block content %}
           <h3>Manifest Kenya Serving Team</h3>
           <h5>Please select the department you are serving under.</h5>
           <label>Department</label><br />
-          <input type="radio" id="administation" name="team" value="Administation" required />
-          <label for="administation">Administration</label><br />
-          <input type="radio" id="welfare" name="team" value="Welfare" />
+          <input type="radio" id="administration" name="team" value="administration" required />
+          <label for="administration">Administration</label><br />
+          <input type="radio" id="welfare" name="team" value="welfare" />
           <label for="welfare">Welfare</label>
-          <input type="radio" id="communications" name="team" value="Communications" />
+          <input type="radio" id="communications" name="team" value="communications" />
           <label for="communications">Communications</label><br />
-          <input type="radio" id="missions" name="team" value="Missions and Outreach" />
+          <input type="radio" id="missions" name="team" value="missions" />
           <label for="missions">Missions and Outreach</label>
-          <input type="radio" id="operations" name="team" value="Operations" />
+          <input type="radio" id="operations" name="team" value="operations" />
           <label for="operation">Operations</label><br />
-          <input type="radio" id="legal" name="team" value="Legal" />
+          <input type="radio" id="legal" name="team" value="legal" />
           <label for="legal">Legal</label>
-          <input type="radio" id="finance" name="team" value="Finance" />
+          <input type="radio" id="finance" name="team" value="finance" />
           <label for="finance">Finance</label><br />
         </div>
 
@@ -71,7 +71,6 @@ block content %}
           id="student_yes"
           name="student"
           value="yes"
-          required
         />
         <label for="student_yes">Yes</label>
         <input type="radio" id="student_no" name="student" value="no" />
