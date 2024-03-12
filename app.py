@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 import csv
-import json
+import os
 from forms import RegistrationForm
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -37,12 +37,43 @@ app.config['SECRET_KEY'] = 'your_secret_key'
 def registration():
     # if request.method == 'POST':
     form = RegistrationForm()
+    if form.validate_on_submit():
+        print("Form submitted successfully!")
+        try:
+            # Get form data
+            first_name = form.first_name.data
+            last_name = form.last_name.data
+            gender = form.gender.data
+            phone_number = form.phone_number.data
+            residence = form.residence.data
+            serving = form.serving.data
+            team = form.team.data
+            student = form.student.data
+            institution_name = form.institution_name.data
+            institution_location = form.institution_location.data
+            first_time = form.first_time.data
+            consent = form.consent.data
+
+            # Write form data to CSV file
+            filename = 'registrations.csv'
+            file_exists = os.path.exists(filename)
+
+            # Write form data to CSV file
+            with open('registrations.csv', 'a', newline='') as csvfile:
+                writer = csv.writer(csvfile)
+                if not file_exists:  # Write header if file is newly created
+                    writer.writerow(['First Name', 'Last Name', 'Gender', 'Phone Number', 'Residence', 'Serving',
+                                    'Team', 'Student', 'Institution Name', 'Institution Location', 'First Time', 'Consent'])
+                writer.writerow([first_name, last_name, gender, phone_number, residence, serving,
+                                team, student, institution_name, institution_location, first_time, consent])
+
+            return redirect(url_for('thank_you'))
+        except Exception as e:
+            print(f"Error occurred while writing to CSV file: {str(e)}")
 
     # db.session.add(form)
     # db.session.commit()
-
-    # return redirect(url_for('thank_you'))
-
+    print(form.errors)
     return render_template('registration.html', form=form)
 
 
