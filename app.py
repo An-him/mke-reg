@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 import csv
 import json
-# from forms import RegistrationForm
+from forms import RegistrationForm
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
@@ -35,38 +35,15 @@ app.config['SECRET_KEY'] = 'your_secret_key'
 
 @app.route('/', methods=['GET', 'POST'])
 def registration():
-    if request.method == 'POST':
+    # if request.method == 'POST':
+    form = RegistrationForm()
 
-        first_name = request.form.get('first_name', '')
-        last_name = request.form.get('last_name', '')
-        gender = request.form.get('gender', '')
-        phone_number = request.form.get('phone_number', '')
-        residence = request.form.get('residence', '')
-        serving = request.form.get('serving', 'no')
-        teams = json.dumps(request.form.getlist('team'))
-        student = request.form.get('student', 'no')
-        first_time = request.form.get('first_time', 'no')
-        consent = request.form.get('consent', '')
+    # db.session.add(form)
+    # db.session.commit()
 
-        registration = Registration(
-            first_name=first_name,
-            last_name=last_name,
-            gender=gender,
-            phone_number=phone_number,
-            residence=residence,
-            serving=serving,
-            teams=teams,
-            student=student,
-            first_time=first_time,
-            consent=consent
-        )
+    # return redirect(url_for('thank_you'))
 
-        db.session.add(registration)
-        db.session.commit()
-
-        return redirect(url_for('thank_you'))
-
-    return render_template('registration.html')
+    return render_template('registration.html', form=form)
 
 
 @app.route('/thank_you')

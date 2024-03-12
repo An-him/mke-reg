@@ -8,27 +8,15 @@ block content %}
         This is an online registration form for members who are attending the
         Physical Livestream Centre for Manifest Kenya, Nairobi.
       </p>
-      <form clas="row g-3" action="/" method="post">
+      <form action="/" method="post">
         <div class="row">
           <div class="col">
             <label for="first_name" class="form-label">First name</label>
-            <input
-              type="text"
-              class="form-control"
-              placeholder="First name"
-              aria-label="First name"
-              required
-            />
+            <p>{{ form.first_name }}</p>
           </div>
           <div class="col">
             <label for="last_name" class="form-label">Last name</label>
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Last name"
-              aria-label="Last name"
-              required
-            />
+            <p>{{ form.last_name }}
           </div>
         </div>
 
@@ -40,26 +28,11 @@ block content %}
           <label for="female">Female</label><br />
         </div>
 
-        <div class="col-md-6">
-          <label for="phone_number" class="form-label">Phone Number</label>
-          <input
-            type="text"
-            class="form-control"
-            id="phone_number"
-            placeholder="Preferably a number on WhatsApp"
-            required
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="residence" class="form-label">Residence</label>
-          <input
-            type="text"
-            class="form-control"
-            id="residence"
-            placeholder="This is where you currently live i.e. town, estate, etc."
-            required
-          />
-        </div>
+        <label for="phone_number" class="form-label">Phone Number</label>
+        <p>{{ form.phone_number }}</p>
+        
+        <label for="residence" class="form-label">Residence</label>
+        <p>{{ form.residence }}</p>
 
         <label>Are you serving with us?</label><br />
         <input
@@ -76,20 +49,20 @@ block content %}
           <h3>Manifest Kenya Serving Team</h3>
           <h5>Please select the department you are serving under.</h5>
           <label>Department</label><br />
-          <input type="radio" id="team1" name="team" value="Team 1" required />
-          <label for="team1">Administration</label><br />
-          <input type="radio" id="team2" name="team" value="Team 2" />
-          <label for="team2">Welfare</label>
-          <input type="radio" id="team3" name="team" value="Team 3" />
-          <label for="team3">Communications</label><br />
-          <input type="radio" id="team4" name="team" value="Team 4" />
-          <label for="team4">Missions and Outreach</label>
-          <input type="radio" id="team5" name="team" value="Team 5" />
-          <label for="team5">Operations</label><br />
-          <input type="radio" id="team6" name="team" value="Team 6" />
-          <label for="team6">Legal</label>
-          <input type="radio" id="team7" name="team" value="Team 6" />
-          <label for="team6">Finance</label><br />
+          <input type="radio" id="administation" name="team" value="Administation" required />
+          <label for="administation">Administration</label><br />
+          <input type="radio" id="welfare" name="team" value="Welfare" />
+          <label for="welfare">Welfare</label>
+          <input type="radio" id="communications" name="team" value="Communications" />
+          <label for="communications">Communications</label><br />
+          <input type="radio" id="missions" name="team" value="Missions and Outreach" />
+          <label for="missions">Missions and Outreach</label>
+          <input type="radio" id="operations" name="team" value="Operations" />
+          <label for="operation">Operations</label><br />
+          <input type="radio" id="legal" name="team" value="Legal" />
+          <label for="legal">Legal</label>
+          <input type="radio" id="finance" name="team" value="Finance" />
+          <label for="finance">Finance</label><br />
         </div>
 
         <label>Are you a student?</label><br />
@@ -107,22 +80,12 @@ block content %}
           <h4>Institution Information</h4>
           <div class="row">
             <div class="col">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Name of Institution"
-                aria-label="Name of Institution"
-                required
-              />
+              <label for="institution_name" class="form-label">Name of Institution</label>
+              <p>{{ form.institution_name }}<p>
             </div>
             <div class="col">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Location of Institution"
-                aria-label="Location of Institution"
-                required
-              />
+              <label for="institution_location" class="form-label">Location of Institution</label>
+              <p>{{ form.institution_location}}
             </div>
           </div>
         </div>
